@@ -141,37 +141,149 @@
 //   console.log("Mi nombre es: " + firstName + " y mi apellido es: " + apellido);
 // })(`Jose`, "Guerrero");
 
-(function obtenerNumeroMayor(numero1, numero2) {
+// (function obtenerNumeroMayor(numero1, numero2) {
 
-  if (numero1 === numero2) {
-    console.log("los numeros son iguales");
-  } else if (numero1 > numero2) {
-    console.log('El numero mayor es: ', numero1);
-  } else {
-    console.log('El numero mayor es: ', numero2);
-  }
+//   if (numero1 === numero2) {
+//     console.log("los numeros son iguales");
+//   } else if (numero1 > numero2) {
+//     console.log('El numero mayor es: ', numero1);
+//   } else {
+//     console.log('El numero mayor es: ', numero2);
+//   }
 
-  console.log(numero1 === numero2 ? "los numeros son iguales"
-                : numero1 > numero2 ? 'El numero mayor es: ' + numero1
-                  :'El numero mayor es: ' + numero2);
+//   console.log(numero1 === numero2 ? "los numeros son iguales"
+//                 : numero1 > numero2 ? 'El numero mayor es: ' + numero1
+//                   :'El numero mayor es: ' + numero2);
 
-})("jose", 10);
+// })("jose", 10);
 
 
-// [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+// // [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
 
-function fibonacci(numero) {
-  if (numero <= 1) return 1;
+// function fibonacci(numero) {
+//   if (numero <= 1) return 1;
 
-  return fibonacci(numero - 1) + fibonacci(numero - 2);
+//   return fibonacci(numero - 1) + fibonacci(numero - 2);
+// }
+
+// function secuenciaFibonacci(limite) {
+//   if (limite < 1) return console.log("Limite debe ser mayor que cero")
+
+//   for (let i = 0; i < limite; i++) {
+//     console.log(fibonacci(i));
+//   }
+// }
+
+// secuenciaFibonacci(8);
+
+// Ejercicios clase 4
+
+// Listas //
+// let numbers = [1, 3, 4, 7, 2, 1, 9, 0, 18, 32] //arreglo inicial
+
+// //[2, 6, 8, 14, 4, 2, 18, 0] // arreglo final
+
+// function multiplicarPorDos(numbers) {
+//   let arregloFinal = [];
+
+//   for(let i = 0; i < numbers.length; i++) {
+//     arregloFinal.push(numbers[i] / 2)
+//   }
+
+//   return arregloFinal;
+// }
+
+// const resultadoOperacion = multiplicarPorDos(numbers);
+// console.log("este es elresultado ======>>>> ", resultadoOperacion);
+
+
+// const edades = [25, 40, 35, 34, 26, 18, 17, 65, 59];
+
+// function promedio(edades) {
+//   let sum = 0;
+
+//   for (let i = 0; i < edades.length; i++) {
+//     sum += edades[i];
+//   }
+
+//   return sum / edades.length
+// }
+
+// console.log("Este es el promedio: ", promedio(edades));
+
+let car = {
+  brand: 'Nissan',
+  model: 'Versa',
+  year: 2021
 }
 
-function secuenciaFibonacci(limite) {
-  if (limite < 1) return console.log("Limite debe ser mayor que cero")
+//[['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]] //resultado esperado
 
-  for (let i = 0; i < limite; i++) {
-    console.log(fibonacci(i));
+// // Función que convierte un objeto a un array de pares de [propiedad,valor]
+
+// function keyValuePairs(datosAExplorar) {
+//   let keys = Object.keys(datosAExplorar); // array car = ["brand", "model", "year"]
+//   let pares = [];
+
+//   for (let i = 0; i < keys.length; i++) {
+//     pares.push([keys[i], datosAExplorar[keys[i]]]);
+//   }
+
+//   return pares;
+// }
+
+// console.log("Estos son los elementos ", keyValuePairs(car));
+
+
+// //[['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]]
+
+// // Función que convierte un array a un objeto con propiedades
+
+// function arrayToObject(arr) {
+//   let object = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     object[arr[i][0]] = arr[i][1];
+//   }
+
+//   return object;
+// }
+
+// console.log("Convirtiendo el array a un objeto ", arrayToObject(keyValuePairs(car)));
+
+// let juan = {
+//   nombre: "Juan",
+//   apellido: "Lopez",
+//   birthYear: 1969,
+//   fechaNacimiento: 15,
+//   calcularEdad: function() {
+//     let today = new Date();
+//     let year = today.getFullYear();
+
+//     this.edad = year - this.birthYear;
+
+//     return this.edad
+//   }
+// }
+
+
+let singers = [
+  { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+  { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+  { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+  { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+];
+
+function pluck(list, propertyName) {
+  let values =[];
+
+  for (let i = 0; i < list.length; i++) {
+    values.push(list[i][propertyName]);
   }
+
+  return values;
+
+  // return list.map(elem => elem[propertyName])
 }
 
-secuenciaFibonacci(8);
+console.log(pluck(singers, "born")) // ['Steven Tyler', 'Karen Carpenter', 'Kurt Cobain', 'Chris Cornell']
