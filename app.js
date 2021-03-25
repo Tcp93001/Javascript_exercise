@@ -267,23 +267,103 @@ let car = {
 // }
 
 
-let singers = [
-  { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
-  { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
-  { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
-  { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
-];
+// let singers = [
+//   { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+//   { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+//   { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+//   { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+// ];
 
-function pluck(list, propertyName) {
-  let values =[];
+// function pluck(list, propertyName) {
+//   let values =[];
 
-  for (let i = 0; i < list.length; i++) {
-    values.push(list[i][propertyName]);
+//   for (let i = 0; i < list.length; i++) {
+//     values.push(list[i][propertyName]);
+//   }
+
+//   return values;
+
+//   // return list.map(elem => elem[propertyName])
+// }
+
+// console.log(pluck(singers, "born")) // ['Steven Tyler', 'Karen Carpenter', 'Kurt Cobain', 'Chris Cornell']
+
+// Ejercicios clase 5
+
+// let juan = {
+//   nombre: 'Juan',
+//   birthYear: 1990,
+//   job: 'Developer'
+// }
+
+// let Person = function(nombre, birthYear, job) {
+//   this.nombre = nombre;
+//   this.birthYear = birthYear;
+//   this.job = job;
+// }
+
+// let juan = new Person('Juan', 1990, 'Developer');
+
+// let Vector = function(x, y) {
+//   this.x = x;
+//   this.y = y;
+// }
+
+// let vector1 = new Vector(3, 4);
+// let vector2 = new Vector(5, 2);
+
+// Vector.prototype.plus = function(other) {
+//   return new Vector(this.x + other.x, this.y + other.y);
+// };
+
+// Vector.prototype.minus = function(other) {
+//   return new Vector(this.x - other.x, this.y - other.y);
+// };
+
+// Vector.prototype.length = function() {
+//   return Math.sqrt(this.x * this.x + this.y * this.y);
+// }
+
+// console.log(vector1.plus(vector2)); // x1+x2,y1+y2
+// console.log(vector1.minus(vector2));// x1-x2, y1-y2
+// console.log(vector1.length()); // Math.sqrt(x1*x1 + y1*y1);
+
+// let Person = function(name) {
+//   this.name = name;
+// }
+
+// // let juan = new Person('Juan');
+
+// let Developer = function(name, skills,yoe) {
+//   Person.call(this, name);
+
+//   this.skills = skills;
+//   this.yoe = yoe;
+// }
+
+let Group = function() {
+  this.members = [];
+} // {members: []};
+
+Group.from = function(collection) {
+  let group = new Group();
+
+  for(let i = 0; i < collection.length; i++) {
+    group.add(collection[i]);
   }
 
-  return values;
-
-  // return list.map(elem => elem[propertyName])
+  return group;
+}
+Group.prototype.add = function(value) {
+  !this.has(value) && this.members.push(value)
 }
 
-console.log(pluck(singers, "born")) // ['Steven Tyler', 'Karen Carpenter', 'Kurt Cobain', 'Chris Cornell']
+Group.prototype.has = function(value) {
+  return this.members.includes(value)
+}
+
+let numeros = Group.from([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 10])
+
+console.log(numeros) // Group members { members: [1, 2, 3, 4,5]}
+// console.log(group.has(5)); // true
+// console.log(group.add([10])) // { members: [1, 2, 3, 4, 5, 10]}
