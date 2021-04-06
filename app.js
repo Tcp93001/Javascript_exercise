@@ -1,4 +1,5 @@
-// Aqui estan los ejercicios de la primera sesión
+// PRIMERA SESION
+// ********************************************************
 
 // var time = 23;
 // var greeting;
@@ -61,6 +62,8 @@
 
 // console.log(speed);
 
+// SEGUNDA SESION
+// ****************************************
 
 // for (let i = 1; i <= 201; i = i + 10) {
 //   console.log("hello world");
@@ -99,7 +102,8 @@
 // }
 
 
-/// Sesion 3 Funciones
+/// TERCERA SESIÓN
+// **************************************************
 
 // function calculateAge(birthYear) {
 //   let age = 2021 - birthYear;
@@ -176,7 +180,9 @@
 
 // secuenciaFibonacci(8);
 
-// Ejercicios clase 4
+
+// CUARTA SESIÓN
+// **************************************
 
 // Listas //
 // let numbers = [1, 3, 4, 7, 2, 1, 9, 0, 18, 32] //arreglo inicial
@@ -211,11 +217,11 @@
 
 // console.log("Este es el promedio: ", promedio(edades));
 
-let car = {
-  brand: 'Nissan',
-  model: 'Versa',
-  year: 2021
-}
+// let car = {
+//   brand: 'Nissan',
+//   model: 'Versa',
+//   year: 2021
+// }
 
 //[['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]] //resultado esperado
 
@@ -288,7 +294,8 @@ let car = {
 
 // console.log(pluck(singers, "born")) // ['Steven Tyler', 'Karen Carpenter', 'Kurt Cobain', 'Chris Cornell']
 
-// Ejercicios clase 5
+// QUINTA SESIÓN
+// ******************************************
 
 // let juan = {
 //   nombre: 'Juan',
@@ -301,6 +308,7 @@ let car = {
 //   this.birthYear = birthYear;
 //   this.job = job;
 // }
+
 
 // let juan = new Person('Juan', 1990, 'Developer');
 
@@ -341,29 +349,232 @@ let car = {
 //   this.yoe = yoe;
 // }
 
-let Group = function() {
-  this.members = [];
-} // {members: []};
+// let Group = function() {
+//   this.members = [];
+// } // {members: []};
 
-Group.from = function(collection) {
-  let group = new Group();
+// Group.from = function(collection) {
+//   let group = new Group();
 
-  for(let i = 0; i < collection.length; i++) {
-    group.add(collection[i]);
-  }
+//   for(let i = 0; i < collection.length; i++) {
+//     group.add(collection[i]);
+//   }
 
-  return group;
-}
-Group.prototype.add = function(value) {
-  !this.has(value) && this.members.push(value)
-}
+//   return group;
+// }
+// Group.prototype.add = function(value) {
+//   !this.has(value) && this.members.push(value)
+// }
 
-Group.prototype.has = function(value) {
-  return this.members.includes(value)
-}
+// Group.prototype.has = function(value) {
+//   return this.members.includes(value)
+// }
 
-let numeros = Group.from([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 10])
+// let numeros = Group.from([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 10])
 
-console.log(numeros) // Group members { members: [1, 2, 3, 4,5]}
-// console.log(group.has(5)); // true
+// console.log(numeros) // Group members { members: [1, 2, 3, 4,5]}
+// // console.log(group.has(5)); // true
 // console.log(group.add([10])) // { members: [1, 2, 3, 4, 5, 10]}
+
+
+/// SEXTA SESIÓN
+// ****************************************
+
+
+// var numbers = [1, 2, 3, 4, 5];
+// var doubles = [];
+
+// for(var i = 0; i < numbers.length; i++) {
+// 	doubles.push(numbers[i] * 2);
+// }
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+
+
+// let numbers = [1, 2, 3, 4, 5];
+// let sumaCinco =numbers.map(function(element) {
+//   return element + 5;
+// })
+
+// // let multiplicaPorDiez = numbers.map((element) => element * 10);
+
+// console.log('SumaCinco es igual a ', sumaCinco)
+// console.log('multiplicaPorDiez es igual a ', multiplicaPorDiez)
+
+// //funcion pura
+// function add(a, b) {
+// 	return a + b;
+// }
+
+// let car = {
+// 	brand: 'Nissan',
+// 	model: 'Sentra',
+// 	year: 2020
+// }
+
+// let miCarro = {
+// 	brand: 'Nissan',
+// 	model: 'Sentra',
+// 	year: 2009
+// }
+
+// function addColor(car) {
+//   let newCar = Object.assign({}, car, {
+//     color: 'Black'
+//   });
+
+//   return newCar;
+// }
+// let newCar = addColor(car);
+
+// let miNuevoCarro = addColor(miCarro);
+
+// console.log('newCar', newCar);
+// console.log('mi nuevocarro', miNuevoCarro);
+
+// let cart = [
+//   {
+//     item: 'Laptop',
+//     quantity: 1
+//   }
+// ]
+
+// Muta la variable cart
+// function addItemToCart(item, quantity) {
+//   cart.push({
+//     item: item,
+//     quantity: quantity
+//   })
+// }
+
+
+// No muta la variable cart
+
+// function addItemToCart(item, quantity) {
+//   let newCart = cart.map(function(element) {
+//     return element;
+//   })
+
+//   newCart.push({
+//     item: item,
+//     quantity: quantity
+//   })
+
+//   return newCart;
+// }
+
+// cart = addItemToCart('Phone1', 1);
+
+// console.log(cart)
+
+// let numbers = [1, 2, 3, 4, 5];
+// let doubles = numbers.map(function(number) {
+//     return number * 2;
+// });
+
+// let numerosPares = numbers.filter(function(number) {
+//   return number % 2 === 0
+// })
+
+// let numerosImpares = numbers.filter(function(number) {
+//   return number % 2 !== 0
+// })
+
+// let sumaArray = numbers.reduce(function(acumulador, valorActual) {
+//   return acumulador + valorActual
+// }, 0)
+
+// console.log(numbers); // [1, 2, 3, 4, 5]
+// console.log(doubles); // [2, 4, 6, 8, 10]
+// console.log(numerosPares)
+// console.log(numerosImpares)
+// console.log(sumaArray)
+
+// Input: 12345
+
+//  -- 1 + 2 + 3 + 4 + 5 = 15
+
+//  Output: 15
+
+// let number = 12345
+
+// // let string = number.toString();
+
+// // let array = string.split('');
+
+// let array = number.toString().split('');
+
+// console.log(number)
+// // console.log(string)
+// console.log(array)
+
+// let arrayOfNumbers = array.map(function(number) {
+//   return Number(number)
+// })
+
+// console.log(arrayOfNumbers)
+
+// let sum = arrayOfNumbers.reduce(function(acumulador, valorActual) {
+//   return acumulador + valorActual
+// }, 0)
+
+// console.log(sum)
+
+// function sumarDigitos(number) {
+//   return  number
+//           .toString()
+//           .split('')
+//           .map(Number)
+//           .reduce(function(acumulador, valorActual) {
+//             return acumulador + valorActual
+//           }, 0)
+// }
+
+// console.log(sumarDigitos(546372));
+
+// Sin utilizar el método flat()
+function flatten(arrays) {
+  return arrays.reduce(function(acumulador,valorActual) {
+    return acumulador.concat(valorActual)
+  }, [])
+}
+
+let arrays = [
+  [1, 2, 3],
+  [4, 5],
+  [6]
+];
+
+let array = flatten(arrays); //[1, 2, 3, 4, 5, 6]
+console.log(array)
+
+// Crear una función compact que recibe un arreglo y retorna un nuevo arreglo sin incluir los valores que sean falsy.
+
+// function compact(array) {
+//   ...
+// }
+
+// var array = [0, 1, false, 2, '', 3];
+// var compactedArray = compact(array);
+
+// console.log(compactedArray); // [1, 2, 3]
+
+// Crear una función de alto orden loop que será similar a un for. Recibe value, una función test, una función update y una función body. En cada iteración se debe ejecutar la función test y terminar el ciclo si la función retorna false. Después se ejecuta la función body dándole como argumento el value actual. Por último se ejecuta la función update para crear un nuevo valor y se repite el proceso.
+
+// function loop(start, test, update, body) {
+//   ...
+// }
+
+// var test = function(n) {
+//   return n > 0;
+// }
+
+// var update = function(n) {
+//   return n - 1;
+// }
+
+// loop(3, test, update, console.log);
+// // 3
+// // 2
+// // 1
