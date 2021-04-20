@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo 1 eventos del DOM</title>
+</head>
+
+<body>
+
+  <h1 id="title">Hello World!</h1>
+
+  <button id="red">Rojo</button>
+
+  <button id="blue">Azul</button>
+
+  <button id="black">Negro</button>
+
+  <script>
+    let title = document.getElementById('title');
+
+    let redButton = document.getElementById('red');
+
+    let blueButton = document.getElementById('blue');
+
+    let blackButton = document.getElementById('black');
+
+    redButton.addEventListener("click", () => cambiarColor('red'))
+
+    blueButton.addEventListener("click", function () {
+      cambiarColor('blue')
+    })
+
+    blackButton.addEventListener("click", function () {
+      cambiarColor('black')
+    })
+
+    function cambiarColor(color) {
+      title.style.color = color;
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <meta charset="utf8" />
+  <title>Reto 1: Inflar un globo</title>
+</head>
+
+<body>
+
+  <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+    <p>🎈</p>
+  </div>
+
+  <script>
+    let size;
+    let globito = document.querySelector("p")
+
+    // Aqui voy a cambiar el tamaño de la fuente del globo, para
+    // hacerlo más grande o más pequeño
+
+    function setSize(newSize) {
+      size = newSize
+      globito.style.fontSize = size + "px";
+    }
+
+    // Aquí defino el tamaño original del globo (en pixeles)
+    setSize(20)
+
+    function handleArrowKeys(event) {
+      if (event.key === "ArrowUp") {
+        if (size > 80) {
+          globito.textContent = "💥"
+          document.body.removeEventListener("keydown", handleArrowKeys)
+        } else {
+          setSize(size * 1.1)
+          event.preventDefault()
+        }
+      } else if (event.key === "ArrowDown") {
+        setSize(size * 0.9)
+        event.preventDefault()
+      }
+    }
+
+    document.body.addEventListener("keydown", handleArrowKeys)
+
+    // 💥
+  </script>
+</body>
+
+</html>

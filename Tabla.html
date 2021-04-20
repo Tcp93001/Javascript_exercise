@@ -10,27 +10,11 @@
 
   <div id="mountains">
     <!-- aqui va a irla tabla insertada -->
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Height</th>
-        <th>Place</th>
-      </tr>
-      <tr>
-        <td>Kilimanjaro</td>
-        <td>5895</td>
-        <td>Tanzania</td>
-      </tr>
-      <tr>
-        <td>Kilimanjaro</td>
-        <td>5895</td>
-        <td>Tanzania</td>
-      </tr>
-    </table>
+
   </div>
 
   <script>
-    var data = [
+    let data = [
       { name: "Kilimanjaro", height: 5895, place: "Tanzania" },
       { name: "Everest", height: 8848, place: "Nepal" },
       { name: "Mount Fuji", height: 3776, place: "Japan" },
@@ -47,20 +31,39 @@
       let table = document.createElement('table');
 
       let fields = Object.keys(data[0]);
+
       console.log('fields', fields)
       let headRow = document.createElement('tr');
 
-      // fields.forEach(function(field) {
+      fields.forEach(function (field) {
+        let headCell = document.createElement('th');
+        headCell.appendChild(document.createTextNode(field))
+        headRow.appendChild(headCell)
+      })
 
-      // })
+      table.appendChild(headRow)
 
+      data.forEach(function (object) {
+        let row = document.createElement('tr')
 
+        fields.forEach(function (field) {
+          let cell = document.createElement('td');
+          cell.appendChild(document.createTextNode(object[field]))
+
+          if (typeof object[field] === 'number') {
+            cell.style.textAlign = "right"
+          }
+
+          row.appendChild(cell)
+        })
+        table.appendChild(row)
+      })
 
       return table;
     }
-    dataTable(data)
-    // document.getElementById('mountains')
-    //   .appendChild(buildDataTable(data));
+
+    document.getElementById('mountains')
+      .appendChild(dataTable(data));
   </script>
 </body>
 
